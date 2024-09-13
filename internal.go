@@ -27,6 +27,7 @@ func displayOperations() {
 
 // requestInput requests input from the user
 func requestInput() string {
+	fmt.Print("\nEnter operation number: ")
 	reader := bufio.NewReader(os.Stdin)
 	command, _ := reader.ReadString('\n')
 	return command
@@ -46,6 +47,6 @@ func handleCommand(command string) {
 
 	// get the operation
 	operation := registeredOperations[index]
-	fmt.Printf("\nExecuting operation %d\n\n", index)
+	fmt.Printf("\nExecuting operation: %d\n\n", index)
 	operation.Function()
 }
